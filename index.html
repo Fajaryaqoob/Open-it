@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Just One Click, Sammar…</title>
+<style>
+    body {
+        background: linear-gradient(120deg, #0f0f0f, #1c1c1c);
+        color: #fff;
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+    }
+    .box {
+        max-width: 520px;
+        padding: 30px;
+        animation: fade 1.2s ease;
+    }
+    button {
+        padding: 14px 32px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        background: #ff5e7e;
+        color: white;
+        cursor: pointer;
+        margin-top: 22px;
+        transition: 0.3s;
+    }
+    button:hover {
+        background: #ff2f5f;
+        transform: scale(1.06);
+    }
+    img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        box-shadow: 0 0 25px rgba(255,94,126,0.6);
+    }
+    h1 {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        opacity: 0.95;
+    }
+    @keyframes fade {
+        from {opacity:0; transform: translateY(10px);}
+        to {opacity:1; transform: translateY(0);}
+    }
+</style>
+</head>
+<body>
+
+<div class="box" id="stage">
+    <h1>Hey 👀</h1>
+    <p>
+        This page is not random.<br>
+        And if you’re smiling already… that’s suspicious 😌
+    </p>
+    <button onclick="step1()">Okay… I’m curious</button>
+</div>
+
+<audio id="song" src="https://www.bensound.com/bensound-music/bensound-sunny.mp3"></audio>
+
+<script>
+function step1() {
+    document.getElementById("stage").innerHTML = `
+        <h1>Hmm… 🤔</h1>
+        <p>
+            This is for someone who is<br>
+            kind, dramatic, beautiful,<br>
+            and pretends not to care but totally does 😏
+        </p>
+        <button onclick="step2()">That sounds like me</button>
+    `;
+}
+
+function step2() {
+    document.getElementById("stage").innerHTML = `
+        <h1>One last click ⏳</h1>
+        <p>
+            Warning ⚠️<br>
+            You might smile.<br>
+            You might feel loved.<br>
+            You might blame your sibling after this.
+        </p>
+        <button onclick="final()">I accept the risk</button>
+    `;
+}
+
+function final() {
+    document.getElementById("song").play();
+    document.getElementById("stage").innerHTML = `
+        <img src="sammar.jpg" alt="Sammar">
+        <h1>🎉 Happy Birthday, Sammar Yaqub 🎉</h1>
+        <p>
+            Today isn’t just your birthday.<br>
+            It’s a reminder that the world got<br>
+            a little brighter the day you arrived 💖
+            <br><br>
+            Never forget how loved you are,<br>
+            how special you are,<br>
+            and how annoying it would be without you 😄
+        </p>
+        <p style="margin-top:18px; font-size:16px;">
+            Stay you. Always ✨
+        </p>
+    `;
+}
+</script>
+
+</body>
+</html>
